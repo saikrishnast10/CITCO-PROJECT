@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> CITCO Login</title>
+    
+</head>
+<body>
+    <h1><center>CITCO Login</center></h1>
+    {% if Error_message %}
+    <p style="color: brown;">{{Error_message}}</p>
+    {% endif %}
+    <form method="POST">
+        {% csrf_token %}
+        <label >Email id</label>
+        <input type="email" name="Email">
+        <br>
+        <br><label >Password</label>
+        <input type="password" name="Password">
+        <br>
+        <br>
+        <button type="submit">LOGIN</button>
+
+
+    </form>
+    <a href="{% url 'register' %}">Registation Form</a>
+</body>
+</html>
